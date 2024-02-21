@@ -2,57 +2,75 @@
 
 import axios from 'axios';
 
+import {state} from '../state.js'
+
 export default{
     name: 'AppMain',
 
     data(){
         return{
 
-            api_url: 'https://api.themoviedb.org/3/search/movie?api_key=a7166e72bbdeac5df51ab7b3fc97c36e&query=ritorno+al+futuro',
-            movies: [],
+            state,
+
+            // movies: [],
+
 
         }
     },
 
-
     mounted(){
 
-        axios
-        .get(this.api_url)
-        .then(response => {
+        state.getMovies(state.api_url)
 
-        console.log(response.data.results);
+    }, 
 
-        this.movies = response.data.results
-
-        })
-        .catch(error => {
-
-        console.error(error);
-        
-        })
-
-    }
+    methods: {
 
 
-
+    },
+    
 }
 </script>
 
 
 <template>
 
-    <div class="movie_card" v-for="movie in movies">
 
-        <div>Titolo: {{ movie.title }}</div>
-        <div>Titolo originale: {{ movie.original_title }}</div>
-        <div>Lingua: {{ movie.original_language }}</div>
-        <div>Voto: {{ movie.vote_average }}</div>
 
-    </div>
+
+
+    <section class="movie_cards">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col" v-for="movie in state.movies" :key="movie.id">
+                    
+                    <div class="movie_card">
+                
+                        <div>Titolo: {{ movie.title }}</div>
+                        <div>Titolo originale: {{ movie.original_title }}</div>
+                        <div>Lingua: {{ movie.original_language }}</div>
+                        <div>Voto: {{ movie.vote_average }}</div>
+                
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
 
 </template>
 
 
 <style scoped>
+
+.movie_card{
+    margin: 1rem;
+}
 </style>

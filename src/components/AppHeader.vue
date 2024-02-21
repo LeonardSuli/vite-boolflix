@@ -1,6 +1,34 @@
 <script>
+
+import axios from 'axios';
+
+import {state} from '../state.js'
+
 export default{
     name: 'AppHeader',
+
+    data(){
+        return{
+
+            state,
+
+            searchText: '',
+        }
+    },
+
+    methods: {
+
+        filterResults(){
+
+            const url = `${state.api_url}&query=${this.searchText}`
+
+            console.log(url);
+
+
+            state.getMovies(url)
+
+        }
+    }
 }
 </script>
 
@@ -9,9 +37,9 @@ export default{
 
     <div class="searchbar">
 
-        <input type="text">
+        <input type="text" placeholder="Cerca un film..." v-model="searchText" @keyup.enter="filterResults">
 
-        <button>Cerca</button>
+        <button @click="filterResults">Cerca</button>
 
     </div>
 
