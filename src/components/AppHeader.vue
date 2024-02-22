@@ -20,12 +20,20 @@ export default{
 
         filterResults(){
 
-            const url = `${state.api_url}&query=${this.searchText}`
+            // let url = `${state.api_url_movies}&query=${this.searchText}`
 
-            console.log(url);
+            // url = `${state.api_url_serieTV}&query=${this.searchText}`
+
+            const movie_url = `${state.api_url_movies}&query=${this.searchText}`;
+            const serieTV_url = `${state.api_url_serieTV}&query=${this.searchText}`;
 
 
-            state.getMovies(url)
+            // console.log(url);
+
+
+            state.getMovies(movie_url)
+
+            state.getSerieTV(serieTV_url)
 
         }
     }
@@ -37,7 +45,7 @@ export default{
 
     <div class="searchbar">
 
-        <input type="text" placeholder="Cerca un film..." v-model="searchText" @keyup.enter="filterResults">
+        <input type="text" placeholder="Cerca un film o una serie TV..." v-model="searchText" @keyup.enter="filterResults">
 
         <button @click="filterResults">Cerca</button>
 

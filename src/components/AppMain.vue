@@ -12,15 +12,15 @@ export default{
 
             state,
 
-            // flag: [],
-
 
         }
     },
 
     mounted(){
 
-        state.getMovies(state.api_url)
+        state.getMovies(state.api_url_movies)
+
+        state.getSerieTV(state.api_url_serieTV)
 
     }, 
 
@@ -55,8 +55,22 @@ export default{
                     </div>
 
                 </div>
-
-            </div>
+                    
+                    <div class="col" v-for="serie in state.serieTV" :key="serie.id">
+                        
+                        <div class="serieTV_card">
+                            
+                            <div>Nome: {{ serie.name }}</div>
+                            <div>Nome originale: {{ serie.original_name }}</div>
+                            <div>Lingua: {{ serie.original_language }}</div>
+                            <div>Lingua: <img style="width: 20px;" :src="`/flags/${serie.original_language === 'en' ? 'gb' : serie.original_language }.svg`" alt="Bandierina stato"></div>
+                            <div>Voto: {{ serie.vote_average }}</div>
+                            
+                        </div>
+                    </div>
+                        
+                    
+                </div>
 
         </div>
 
@@ -68,7 +82,7 @@ export default{
 
 <style scoped>
 
-.movie_card{
+.movie_card, .serieTV_card{
     margin: 1rem;
 }
 </style>
