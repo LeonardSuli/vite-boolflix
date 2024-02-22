@@ -45,7 +45,8 @@ export default{
                 <div class="col" v-for="movie in state.movies" :key="movie.id">
                     
                     <div class="movie_card">
-                
+
+                        <img :src="`https://image.tmdb.org/t/p/w200${movie.poster_path}`" alt="">
                         <div>Titolo: {{ movie.title }}</div>
                         <div>Titolo originale: {{ movie.original_title }}</div>
                         <div>Lingua: {{ movie.original_language }}</div>
@@ -60,6 +61,7 @@ export default{
                         
                         <div class="serieTV_card">
                             
+                            <img :src="`https://image.tmdb.org/t/p/w200${serie.poster_path}`" alt="">-
                             <div>Nome: {{ serie.name }}</div>
                             <div>Nome originale: {{ serie.original_name }}</div>
                             <div>Lingua: {{ serie.original_language }}</div>
