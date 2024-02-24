@@ -9,3 +9,19 @@ body{
   text-align: center;
   margin-top: 2rem;
 }
+
+.container{
+  margin: auto;
+}
+  
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+}
+  
+.col{
+  width: auto;
+  flex-basis: auto;
+  padding: 1rem;
+}

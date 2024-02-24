@@ -1,58 +1,25 @@
 <script>
 
-import axios from 'axios';
-
-import {state} from '../state.js'
+import AppLogo from './AppLogo.vue';
+import SearchBar from './SearchBar.vue';
 
 export default{
     name: 'AppHeader',
-
-    data(){
-        return{
-
-            state,
-
-            searchText: '',
-        }
-    },
-
-    methods: {
-
-        filterResults(){
-
-            // let url = `${state.api_url_movies}&query=${this.searchText}`
-
-            // url = `${state.api_url_serieTV}&query=${this.searchText}`
-
-            const movie_url = `${state.api_url_movies}&query=${this.searchText}`;
-            const serieTV_url = `${state.api_url_serieTV}&query=${this.searchText}`;
-
-
-            // console.log(url);
-
-
-            state.getMovies(movie_url)
-
-            state.getSerieTV(serieTV_url)
-
-        }
+    components:{
+        AppLogo,
+        SearchBar,
     }
 }
 </script>
 
 
 <template>
+    
+    <AppLogo></AppLogo>
 
-    <div class="searchbar">
-
-        <input type="text" placeholder="Cerca un film o una serie TV..." v-model="searchText" @keyup.enter="filterResults">
-
-        <button @click="filterResults">Cerca</button>
-
-    </div>
+    <SearchBar></SearchBar>
 
 </template>
 
 
-<style scoped>
-</style>
+<style scoped></style>

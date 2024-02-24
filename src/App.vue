@@ -4,7 +4,7 @@ import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 
 export default{
-  name:'App',
+  name: 'App',
   components:{
     AppHeader,
     AppMain,
@@ -16,10 +16,10 @@ export default{
 <template>
 
   <AppHeader></AppHeader>
+
   <AppMain></AppMain>
 
 </template>
 
 
-<style scoped>
-</style>
+<style scoped></style>
