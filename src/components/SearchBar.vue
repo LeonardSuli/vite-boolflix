@@ -47,7 +47,7 @@ export default{
 
         <input type="text" placeholder="Cerca un film o una serie TV..." v-model="searchText" @keyup.enter="filterResults">
 
-        <button @click="filterResults">Cerca</button>
+        <i @click="filterResults" class="fa-solid fa-magnifying-glass"></i>
 
     </div>
 
@@ -55,4 +55,23 @@ export default{
 
 
 <style scoped>
+
+.searchbar{
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+input{
+    margin-right: 1rem;
+    color: white;
+    background-color: rgb(48, 49, 52);
+    padding: 0.2rem 0;
+    border: none;
+    width: 200px;
+}
+
+i{
+    cursor: pointer;
+}
+
 </style>

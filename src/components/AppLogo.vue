@@ -12,4 +12,10 @@ export default{
 </template>
 
 
-<style scoped></style>
+<style scoped>
+
+img{
+    width: 200px;
+}
+
+</style>
