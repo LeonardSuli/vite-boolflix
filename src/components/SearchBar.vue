@@ -18,14 +18,16 @@ export default{
 
     methods: {
 
+        // let url = `${state.api_url_movies}&query=${this.searchText}`
+
+        // url = `${state.api_url_serieTV}&query=${this.searchText}`
+
         filterResults(){
 
-            // let url = `${state.api_url_movies}&query=${this.searchText}`
-
-            // url = `${state.api_url_serieTV}&query=${this.searchText}`
 
             const movie_url = `${state.api_url_movies}&query=${this.searchText}`;
             const serieTV_url = `${state.api_url_serieTV}&query=${this.searchText}`;
+            // const mix_url = state.api_url_mix
 
 
             // console.log(url);
@@ -34,6 +36,10 @@ export default{
             state.getMovies(movie_url)
 
             state.getSerieTV(serieTV_url)
+
+            // state.getMix(mix_url)
+
+            state.hide_mix_card = false
 
         }
     }
@@ -65,7 +71,7 @@ input{
     margin-right: 1rem;
     color: white;
     background-color: rgb(48, 49, 52);
-    padding: 0.2rem 0;
+    padding: 0.2rem ;
     border: none;
     width: 200px;
 }

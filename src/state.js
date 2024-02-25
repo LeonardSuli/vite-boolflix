@@ -10,6 +10,12 @@ export const state = reactive({
     api_url_serieTV: 'https://api.themoviedb.org/3/search/tv?api_key=a7166e72bbdeac5df51ab7b3fc97c36e',
     serieTV: [],
 
+    api_url_mix: 'https://api.themoviedb.org/3/trending/all/day?api_key=e99307154c6dfb0b4750f6603256716d',
+    mix: [],
+
+    hide_mix_card: true,
+
+
 
 
     getMovies(movie_url){
@@ -42,6 +48,26 @@ export const state = reactive({
         console.log(response.data.results);
 
         this.serieTV = response.data.results
+
+        })
+        .catch(error => {
+
+        console.error(error);
+        
+        })
+    },
+
+
+
+    getMix(mix_url){
+        
+        axios
+        .get(mix_url)
+        .then(response => {
+
+        console.log(response.data.results);
+
+        this.mix = response.data.results
 
         })
         .catch(error => {
