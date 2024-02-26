@@ -1,14 +1,14 @@
 <script>
 
 import AppLogo from './AppLogo.vue';
-import SearchBar from './SearchBar.vue';
+import SearchBarFilter from './SearchBarFilter.vue';
 import NavBar from './NavBar.vue';
 
 export default{
     name: 'AppHeader',
     components:{
         AppLogo,
-        SearchBar,
+        SearchBarFilter,
         NavBar
     }
 }
@@ -23,7 +23,7 @@ export default{
     
         <NavBar></NavBar>
     
-        <SearchBar></SearchBar>
+        <SearchBarFilter></SearchBarFilter>
 
     </header>
 

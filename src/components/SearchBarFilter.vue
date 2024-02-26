@@ -5,14 +5,13 @@ import axios from 'axios';
 import {state} from '../state.js'
 
 export default{
-    name: 'SearchBar',
+    name: 'SearchBarFilter',
 
     data(){
         return{
 
             state,
 
-            searchText: '',
         }
     },
 
@@ -25,8 +24,8 @@ export default{
         filterResults(){
 
 
-            const movie_url = `${state.api_url_movies}&query=${this.searchText}`;
-            const serieTV_url = `${state.api_url_serieTV}&query=${this.searchText}`;
+            const movie_url = `${state.api_url_movies}&query=${state.searchText}`;
+            const serieTV_url = `${state.api_url_serieTV}&query=${state.searchText}`;
             // const mix_url = state.api_url_mix
 
 
@@ -51,7 +50,7 @@ export default{
 
     <div class="searchbar">
 
-        <input type="text" placeholder="Cerca un film o una serie TV..." v-model="searchText" @keyup.enter="filterResults">
+        <input type="text" placeholder="Cerca un film o una serie TV..." v-model="state.searchText" @keyup.enter="filterResults">
 
         <i @click="filterResults" class="fa-solid fa-magnifying-glass"></i>
 
@@ -71,7 +70,7 @@ input{
     margin-right: 1rem;
     color: white;
     background-color: rgb(48, 49, 52);
-    padding: 0.2rem ;
+    padding: 0.3rem ;
     border: none;
     width: 200px;
 }

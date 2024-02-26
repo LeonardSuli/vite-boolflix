@@ -26,11 +26,6 @@ export default{
         state.getMix(state.api_url_mix)
 
     }, 
-
-    methods: {
-
-
-    },
     
 }
 </script>
@@ -40,13 +35,15 @@ export default{
 
     <main>
 
-        <section class="movie_cards">
+       
     
-            <div class="container">
+            <div class="container" v-if="state.hide_mix_card" >
     
+                <h2>I più popolari su Boolflix</h2>
+
                 <div class="row">
 
-                    <div class="col" v-if="state.hide_mix_card" v-for="mix in state.mix" :key="mix.id">
+                    <div class="col" v-for="mix in state.mix" :key="mix.id">
                         
                         <div class="mix_card">    <!-- // v-if="mix.vote_average !== 0" -->
     
@@ -77,15 +74,26 @@ export default{
                                 </div>
     
                             </div>
-    
                     
                         </div>
 
-                        
                     </div>
                     
-                    <div v-else></div>
-    
+                    
+                </div>
+                
+            </div>
+            
+            <div v-else></div>
+
+            <!-- <div>Risultati trovati: {{ state.movies.length + state.serieTV.length }}</div> -->
+            
+            <div class="container">
+
+                <h2>Film</h2>
+
+                <div class="row">
+                
                     <div class="col" v-for="movie in state.movies" :key="movie.id">
                         
                         <div class="movie_card">    <!-- // v-if="movie.vote_average !== 0" -->
@@ -122,6 +130,16 @@ export default{
                         </div>
     
                     </div>
+
+                </div>
+
+            </div>
+
+            <div class="container">
+
+                <h2>Serie TV</h2>
+
+                <div class="row">
                         
                     <div class="col" v-for="serie in state.serieTV" :key="serie.id">
                             
@@ -158,12 +176,9 @@ export default{
     
                     </div>
                             
-                        
-                    </div>
+                </div>
     
             </div>
-    
-        </section>
 
     </main>
 
@@ -178,7 +193,6 @@ main{
 }
 
 .movie_card, .serieTV_card, .mix_card{
-    margin: 1rem;
     position: relative;
 }
 

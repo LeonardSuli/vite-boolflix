@@ -13,11 +13,14 @@ export const state = reactive({
     api_url_mix: 'https://api.themoviedb.org/3/trending/all/day?api_key=e99307154c6dfb0b4750f6603256716d',
     mix: [],
 
+    searchText: '',
+
+
     hide_mix_card: true,
 
 
 
-
+    // Funzione con cui richiamo la lista di film con una chiamata ajax
     getMovies(movie_url){
         
         axios
@@ -38,7 +41,7 @@ export const state = reactive({
 
 
 
-
+    // Funzione con cui richiamo la lista di serieTV con una chiamata ajax
     getSerieTV(serieTV_url){
         
         axios
@@ -58,7 +61,8 @@ export const state = reactive({
     },
 
 
-
+    // Funzione con cui richiamo una lista di film e serieTV con una chiamata ajax
+    // da inserire appena si aaccede al sito
     getMix(mix_url){
         
         axios
