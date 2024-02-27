@@ -1,15 +1,16 @@
 <script>
 
 import AppLogo from './AppLogo.vue';
-import SearchBarFilter from './SearchBarFilter.vue';
 import NavBar from './NavBar.vue';
+import SearchBarFilter from './SearchBarFilter.vue';
 
 export default{
     name: 'AppHeader',
+
     components:{
         AppLogo,
+        NavBar,
         SearchBarFilter,
-        NavBar
     }
 }
 </script>

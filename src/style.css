@@ -37,3 +37,30 @@ li a{
   text-decoration: none;
   color: white;
 }
+
+
+
+
+
+
+/* AppMain */
+
+.movie_card, .serieTV_card, .mix_card{
+  position: relative;
+}
+
+.information{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.movie_card:hover .information, 
+.serieTV_card:hover .information,
+.mix_card:hover .information{
+  display: block;
+  background-color: gray;
+}
