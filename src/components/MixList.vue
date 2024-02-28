@@ -26,9 +26,9 @@ export default{
 
 <template>
 
-    <section class="mix">
+    <section class="mix" v-if="state.hide_cards">
         
-        <div class="container" v-if="state.hide_mix_card" >
+        <div class="container">
 
             <h2>I più popolari su Boolflix</h2>
 
@@ -75,9 +75,9 @@ export default{
             
         </div>
         
-        <div v-else></div>
-
     </section>
+
+    <div v-else></div>
    
 </template>
 

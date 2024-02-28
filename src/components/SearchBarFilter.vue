@@ -38,7 +38,8 @@ export default{
 
             // state.getMix(mix_url)
 
-            state.hide_mix_card = false
+            state.hide_cards = false
+
 
         }
     }

@@ -26,7 +26,7 @@ export default{
 
 <template>
 
-    <section class="serieTV">
+    <section class="serieTV" v-if="!state.hide_cards">
 
         <div class="container">
 
@@ -75,6 +75,7 @@ export default{
 
     </section>
 
+    <div v-else></div>
     
 </template>
 

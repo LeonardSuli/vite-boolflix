@@ -16,7 +16,7 @@ export const state = reactive({
     searchText: '',
 
 
-    hide_mix_card: true,
+    hide_cards: true,
 
 
 

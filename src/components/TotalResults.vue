@@ -27,7 +27,9 @@ export default{
 
 <template>
 
-    <div>Risultati trovati: {{ getTotalResults }}</div>
+    <div v-if="!state.hide_cards">Risultati trovati: {{ getTotalResults }}</div>
+
+    <div v-else></div>
 
 </template>
 
