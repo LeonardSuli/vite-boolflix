@@ -5,6 +5,7 @@ import {state} from '../state.js';
 import MixList from './MixList.vue';
 import MoviesList from './MoviesList.vue';
 import SerieTVList from './SerieTVList.vue';
+import TotalResults from './TotalResults.vue';
 
 export default{
     name: 'AppMain',
@@ -13,6 +14,7 @@ export default{
         MixList,
         MoviesList,
         SerieTVList,
+        TotalResults,
     },
 
     data(){
@@ -30,11 +32,11 @@ export default{
 <template>
 
     <main>
-
+        
         <MixList></MixList>
 
-        <div>Risultati trovati: {{ state.movies.length + state.serieTV.length }}</div>
-
+        <TotalResults></TotalResults>
+        
         <MoviesList></MoviesList>
 
         <SerieTVList></SerieTVList>
