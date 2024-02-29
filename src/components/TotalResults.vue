@@ -27,11 +27,19 @@ export default{
 
 <template>
 
-    <div v-if="!state.hide_cards">Risultati trovati: {{ getTotalResults }}</div>
+    <h3 class="results" v-if="!state.hide_cards">Risultati trovati: {{ getTotalResults }}</h3>
 
     <div v-else></div>
 
 </template>
 
 
-<style scoped></style>
+<style scoped>
+
+.results{
+    margin-left: 2.3rem;
+    margin-bottom: 1rem;
+    color: rgb(220, 26, 40);
+}
+
+</style>

@@ -1,7 +1,5 @@
 <script>
 
-import axios from 'axios';
-
 import {state} from '../state.js'
 
 export default{
@@ -17,29 +15,15 @@ export default{
 
     methods: {
 
-        // let url = `${state.api_url_movies}&query=${this.searchText}`
-
-        // url = `${state.api_url_serieTV}&query=${this.searchText}`
-
         filterResults(){
-
 
             const movie_url = `${state.api_url_movies}&query=${state.searchText}`;
             const serieTV_url = `${state.api_url_serieTV}&query=${state.searchText}`;
-            // const mix_url = state.api_url_mix
 
-
-            // console.log(url);
-
-
-            state.getMovies(movie_url)
-
-            state.getSerieTV(serieTV_url)
-
-            // state.getMix(mix_url)
+            state.getMovies(movie_url);
+            state.getSerieTV(serieTV_url);
 
             state.hide_cards = false
-
 
         }
     }

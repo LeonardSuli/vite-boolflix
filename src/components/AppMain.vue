@@ -50,7 +50,7 @@ export default{
 
 main{
     padding-top: 100px;
-    background-color: rgb(53, 34, 34);
+    background-color: black;
 }
 
 </style>
