@@ -32,7 +32,10 @@ export default{
         <div class="information">
 
             <div>Titolo: {{ movie.title }}</div>
-            <div>Titolo originale: {{ movie.original_title }}</div>
+
+            <!-- Condizione che lascia il titolo originale solo se è diverso da titolo -->
+            <div v-if="movie.title !== movie.original_title">Titolo originale: {{ movie.original_title }}</div>
+            
             <div>Lingua: {{ movie.original_language }}</div>
             <div>Lingua: <img style="width: 20px;" :src="`/flags/${movie.original_language === 'en' ? 'gb' : movie.original_language }.svg`" alt="Bandierina stato"></div>
             <div>Voto: {{ movie.vote_average }}</div>

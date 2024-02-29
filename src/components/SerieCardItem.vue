@@ -31,8 +31,12 @@ export default{
     
         <div class="information">
     
-            <div>Nome: {{ serie.name }}</div>
-            <div>Nome originale: {{ serie.original_name }}</div>
+            <div>Titolo: {{ serie.name }}</div>
+
+            <!-- Condizione che lascia il titolo originale solo se è diverso da titolo -->
+            <div v-if="serie.name !== serie.original_name">Titolo originale: {{ serie.original_name }}</div>
+
+            <!-- <div>Nome originale: {{ serie.original_name }}</div> -->
             <div>Lingua: {{ serie.original_language }}</div>
             <div>Lingua: <img style="width: 20px;" :src="`/flags/${serie.original_language === 'en' ? 'gb' : serie.original_language }.svg`" alt="Bandierina stato"></div>
             <div>Voto: {{ serie.vote_average }}</div>
