@@ -50,6 +50,8 @@ export default{
                 </span>
     
             </div>
+
+            <div>Overview: {{ serie.overview }}</div>
     
         </div>
                                 

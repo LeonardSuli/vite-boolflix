@@ -53,6 +53,8 @@ export default{
 
             </div>
 
+            <div>Overview: {{ mix.overview }}</div>
+
         </div>
 
     </div>

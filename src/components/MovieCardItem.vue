@@ -53,6 +53,8 @@ export default{
                         
             </div>
 
+            <div>Overview: {{ movie.overview }}</div>
+
         </div>
 
     </div>
