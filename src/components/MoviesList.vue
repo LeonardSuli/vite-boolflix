@@ -34,7 +34,7 @@ export default{
 
 <template>
 
-    <section class="movies" v-if="!state.hide_cards">
+    <section class="movies" v-if="!state.hide_cards && state.movies.length > 0">
             
         <div class="container">
 

@@ -34,7 +34,7 @@ export default{
 
 <template>
 
-    <section class="serieTV" v-if="!state.hide_cards">
+    <section class="serieTV" v-if="!state.hide_cards && state.serieTV.length > 0">
 
         <div class="container">
 
