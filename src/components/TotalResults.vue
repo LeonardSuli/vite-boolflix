@@ -31,7 +31,7 @@ export default{
 
     <div v-else></div>
 
-    <h3 class="no_results" v-if="getTotalResults === 0">Nessun risultato trovato</h3>
+    <h3 class="no_results" v-if="!state.hide_cards && getTotalResults === 0">Nessun risultato trovato</h3>
 
 </template>
 

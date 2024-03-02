@@ -15,21 +15,24 @@ export const state = reactive({
 
     searchText: '',
 
-
     hide_cards: true,
 
+    loading: true,
 
+    
 
     // Funzione con cui richiamo la lista di film con una chiamata ajax
-    getMovies(movie_url){
+    getMovies(api_url_movies){
         
         axios
-        .get(movie_url)
+        .get(api_url_movies)
         .then(response => {
 
         console.log(response.data.results);
 
         this.movies = response.data.results
+
+        // this.loading = false
 
         })
         .catch(error => {
@@ -42,15 +45,18 @@ export const state = reactive({
 
 
     // Funzione con cui richiamo la lista di serieTV con una chiamata ajax
-    getSerieTV(serieTV_url){
+    getSerieTV(api_url_serieTV){
         
         axios
-        .get(serieTV_url)
+        .get(api_url_serieTV)
         .then(response => {
 
         console.log(response.data.results);
 
         this.serieTV = response.data.results
+
+        // this.loading = false
+
 
         })
         .catch(error => {
@@ -63,15 +69,17 @@ export const state = reactive({
 
     // Funzione con cui richiamo una lista di film e serieTV con una chiamata ajax
     // da inserire appena si aaccede al sito
-    getMix(mix_url){
+    getMix(api_url_mix){
         
         axios
-        .get(mix_url)
+        .get(api_url_mix)
         .then(response => {
 
         console.log(response.data.results);
 
         this.mix = response.data.results
+
+        this.loading = false
 
         })
         .catch(error => {
@@ -82,6 +90,9 @@ export const state = reactive({
     },
 
 
+
+
+    
 
   
 

@@ -4,14 +4,15 @@ import {state} from '../state.js'
 
 import MixCardItem from './MixCardItem.vue'
 
+import LoadingIcon from './LoadingIcon.vue'
+
 export default{
     name: 'MixList',
 
     components:{
-
-        MixCardItem
-
-    },
+    MixCardItem,
+    LoadingIcon,
+},
     
     data(){
         return{
@@ -22,8 +23,13 @@ export default{
     },
     
     mounted(){
+
+        setTimeout(() =>{
+
+            state.getMix(state.api_url_mix)
+
+        }, 3000)
         
-        state.getMix(state.api_url_mix)
         
     }, 
     
@@ -40,7 +46,7 @@ export default{
 
             <h1>I più popolari su Boolflix</h1>
 
-            <div class="row">
+            <div class="row" v-if="!state.loading">
 
                 <div class="col" v-for="mix in state.mix" :key="mix.id">
 
@@ -49,7 +55,9 @@ export default{
                 </div>            
                 
             </div>
-            
+
+            <LoadingIcon v-else></LoadingIcon>
+
         </div>
         
     </section>
