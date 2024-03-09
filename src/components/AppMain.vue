@@ -50,7 +50,6 @@ export default{
 
 main{
     padding-top: 100px;
-    background-color: blue;
 }
 
 </style>

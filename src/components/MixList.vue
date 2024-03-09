@@ -28,7 +28,7 @@ export default{
 
             state.getMix(state.api_url_mix)
 
-        }, 3000)
+        }, 1500)
         
         
     }, 
@@ -48,7 +48,7 @@ export default{
 
             <div class="row" v-if="!state.loading">
 
-                <div class="col" v-for="mix in state.mix" :key="mix.id">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl" v-for="mix in state.mix" :key="mix.id">
 
                     <MixCardItem :mix="mix"></MixCardItem>
 

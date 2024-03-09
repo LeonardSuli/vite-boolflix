@@ -42,6 +42,7 @@ header{
     z-index: 1;
     left: 0;
     right: 0;
+    box-shadow: 0 10px 18px rgb(36, 36, 36);
 }
 
 </style>
