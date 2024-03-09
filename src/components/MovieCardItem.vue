@@ -17,7 +17,7 @@ export default{
 
         movie: Object
 
-    }
+    },
 
 }
 </script>
@@ -37,9 +37,10 @@ export default{
             <div v-if="movie.title !== movie.original_title">Titolo originale: {{ movie.original_title }}</div>
             
             <div>Lingua: {{ movie.original_language }}</div>
-            <div>Lingua: <img style="width: 20px;" :src="`/flags/${movie.original_language === 'en' ? 'gb' : movie.original_language }.svg`" alt="Bandierina stato"></div>
+            <!-- /flags/${movie.original_language === 'cs' ? 'cz' : movie.original_language }.svg -->
+            <div>Lingua: <img style="width: 20px;" :src="state.getFlags(movie.original_language)" alt="Bandierina stato"></div>
+            
             <div>Voto: {{ movie.vote_average }}</div>
-
             <div class="star_vote_average">
 
                 <span>Voto:</span>

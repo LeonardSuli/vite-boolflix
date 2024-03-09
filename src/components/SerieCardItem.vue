@@ -38,7 +38,7 @@ export default{
 
             <!-- <div>Nome originale: {{ serie.original_name }}</div> -->
             <div>Lingua: {{ serie.original_language }}</div>
-            <div>Lingua: <img style="width: 20px;" :src="`/flags/${serie.original_language === 'en' ? 'gb' : serie.original_language }.svg`" alt="Bandierina stato"></div>
+            <div>Lingua: <img style="width: 20px;" :src="state.getFlags(serie.original_language)" alt="Bandierina stato"></div>
             <div>Voto: {{ serie.vote_average }}</div>
     
             <div class="star_vote_average">

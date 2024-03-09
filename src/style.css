@@ -20,8 +20,7 @@ body{
 .row{
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -1rem;
-  /* justify-content: center; */
+  margin: 0 -0.5rem;
 }
   
 .col{
@@ -30,7 +29,7 @@ body{
 }
 
 [class^='col-']{
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 img{
@@ -52,12 +51,22 @@ img{
   .col-md-4{
       width: calc(100% / 12 * 4);
   }
+
+  header ul{
+    flex-direction: row;
+    margin-left: 4rem;
+  }
+
 }
 
 
 @media screen and (min-width: 1024px){
   .col-lg-3{
-      width: calc(100% / 12 * 3);
+    width: calc(100% / 12 * 3);
+  }
+  
+  header input{
+    width: 200px;
   }
 }
 
@@ -91,10 +100,6 @@ li a{
   text-decoration: none;
   color: white;
 }
-
-
-
-
 
 
 

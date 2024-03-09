@@ -44,7 +44,7 @@ export default{
 </template>
 
 
-<style scoped>
+<style>
 
 .searchbar{
     margin-left: auto;
@@ -57,7 +57,7 @@ input{
     background-color: rgb(48, 49, 52);
     padding: 0.3rem ;
     border: none;
-    width: 200px;
+    width: auto;
 }
 
 i{

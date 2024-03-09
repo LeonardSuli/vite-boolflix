@@ -18,11 +18,12 @@ export default{
 </template>
 
 
-<style scoped>
+<style>
 
 ul{
     display: flex;
-    margin-left: 4rem;
+    margin-left: 1rem;
+    flex-direction: column;
 }
 
 li{

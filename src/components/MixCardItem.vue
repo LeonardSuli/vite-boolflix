@@ -37,7 +37,7 @@ export default{
             <div v-if="mix.title !== mix.original_title || mix.name !== mix.original_name">Titolo originale: {{ mix.original_title || mix.original_name }}</div>
             
             <div>Lingua: {{ mix.original_language }}</div>
-            <div>Lingua: <img style="width: 20px;" :src="`/flags/${mix.original_language === 'en' ? 'gb' : mix.original_language }.svg`" alt="Bandierina stato"></div>
+            <div>Lingua: <img style="width: 20px;" :src="state.getFlags(mix.original_language)" alt="Bandierina stato"></div>
             <div>Voto: {{ mix.vote_average }}</div>
 
             <div class="star_vote_average">

@@ -90,6 +90,18 @@ export const state = reactive({
     },
 
 
+    getFlags(original_language){
+
+        return `/flags/${original_language === 'en' ? 'gb' : 
+        original_language === 'cs' ? 'cz' :
+        original_language === 'ja' ? 'jp' : 
+        original_language === 'ko' ? 'kr' :
+        original_language === 'zh' ? 'cn' : 
+        original_language}.svg`
+
+    }
+
+
 
 
     
