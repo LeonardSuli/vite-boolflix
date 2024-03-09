@@ -27,22 +27,40 @@ export default{
 
     <div class="mix_card">
 
-        <img :src="mix.poster_path ? `https://image.tmdb.org/t/p/w342${mix.poster_path}` : '/image.jpg'" alt="Poster">
+        <!-- Copertina del film o della serie TV -->
+        <img class="poster" :src="mix.poster_path ? `https://image.tmdb.org/t/p/w342${mix.poster_path}` : '/image.jpg'" alt="Poster">
 
         <div class="information">
 
-            <div>Titolo: {{ mix.title || mix.name }}</div>
+            <!-- Titolo del film o della serie TV -->
+            <div class="title">
 
-            <!-- Condizione che lascia il titolo originale o nome originale solo se è diverso da titolo o nome -->
-            <div v-if="mix.title !== mix.original_title || mix.name !== mix.original_name">Titolo originale: {{ mix.original_title || mix.original_name }}</div>
+                <div class="category">Titolo:</div>
+                <div>{{ mix.title || mix.name }}</div>
+
+            </div>
+
+            <!-- Titolo originale del film o della serie TV -->
+            <div class="original_title" v-if="mix.title !== mix.original_title || mix.name !== mix.original_name">
+
+                <div class="category">Titolo originale:</div>
+                <!-- Condizione che lascia il titolo originale o nome originale solo se è diverso da titolo o nome -->
+                <div >{{ mix.original_title || mix.original_name }}</div>
+
+            </div>
+
+            <!-- Lingua del film o della serie TV -->
+            <div class="language">
+
+                <div class="category">Lingua:</div>
+                <img style="width: 20px;" :src="state.getFlags(mix.original_language)" :alt="mix.original_language">
+
+            </div>
             
-            <div>Lingua: {{ mix.original_language }}</div>
-            <div>Lingua: <img style="width: 20px;" :src="state.getFlags(mix.original_language)" alt="Bandierina stato"></div>
-            <div>Voto: {{ mix.vote_average }}</div>
-
+            <!-- Voto del film o della serie TV -->
             <div class="star_vote_average">
 
-                <span>Voto:</span>
+                <div class="category">Voto:</div>
 
                 <!-- Calcolo del numero di stelle piene -->
                 <span v-for="i in Math.ceil(mix.vote_average / 2)">
@@ -56,7 +74,13 @@ export default{
 
             </div>
 
-            <div>Overview: {{ mix.overview }}</div>
+            <!-- Overview del film o della serie TV -->
+            <div class="overview" v-if="mix.overview">
+
+                <div class="category">Overview:</div>
+                <div>{{ mix.overview }}</div>
+
+            </div>
 
         </div>
 
@@ -65,4 +89,4 @@ export default{
 </template>
 
 
-<style scoped></style>
+<style></style>

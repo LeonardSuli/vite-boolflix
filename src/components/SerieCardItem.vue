@@ -26,22 +26,41 @@ export default{
 <template>
 
     <div class="serieTV_card">
-                            
-        <img :src="serie.poster_path ? `https://image.tmdb.org/t/p/w200${serie.poster_path}` : '/image.jpg'" alt="Poster">
+        
+        <!-- Copertina della serie TV -->
+        <img class="poster" :src="serie.poster_path ? `https://image.tmdb.org/t/p/w200${serie.poster_path}` : '/image.jpg'" alt="Poster">
     
         <div class="information">
-    
-            <div>Titolo: {{ serie.name }}</div>
 
-            <!-- Condizione che lascia il titolo originale solo se è diverso da titolo -->
-            <div v-if="serie.name !== serie.original_name">Titolo originale: {{ serie.original_name }}</div>
+            <!-- Titolo della serie TV -->
+            <div class="title">
 
-            <!-- <div>Nome originale: {{ serie.original_name }}</div> -->
-            <div>Lingua: {{ serie.original_language }}</div>
-            <div>Lingua: <img style="width: 20px;" :src="state.getFlags(serie.original_language)" alt="Bandierina stato"></div>
-            <div>Voto: {{ serie.vote_average }}</div>
-    
+                <div class="category">Titolo:</div>
+                <div>{{ serie.name }}</div>
+
+            </div>
+
+            <!-- Titolo originale della serie TV -->
+            <div class="original_title" v-if="serie.name !== serie.original_name">
+
+                <div class="category">Titolo originale:</div>
+                <!-- Condizione che lascia il titolo originale solo se è diverso da titolo -->
+                <div >{{ serie.original_name }}</div>
+
+            </div>
+
+            <!-- Lingua della serie TV -->
+            <div class="language">
+
+                <div class="category">Lingua:</div>
+                <img style="width: 20px;" :src="state.getFlags(serie.original_language)" :alt="serie.original_language">
+
+            </div>
+            
+            <!-- Voto della serie TV -->
             <div class="star_vote_average">
+
+                <div class="category">Voto:</div>
     
                 <!-- Calcolo del numero di stelle piene -->
                 <span v-for="i in Math.ceil(serie.vote_average / 2)">
@@ -55,8 +74,14 @@ export default{
     
             </div>
 
-            <div>Overview: {{ serie.overview }}</div>
-    
+            <!-- Overview del film -->
+            <div class="overview" v-if="serie.overview">
+
+                <div class="category">Overview:</div>
+                <div>{{ serie.overview }}</div>
+
+            </div>
+
         </div>
                                 
     </div>

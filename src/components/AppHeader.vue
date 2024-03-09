@@ -39,7 +39,7 @@ header{
     align-items: center;
     padding: 0.5rem 1rem;
     position: fixed;
-    z-index: 1;
+    z-index: 100;
     left: 0;
     right: 0;
     box-shadow: 0 10px 18px rgb(36, 36, 36);

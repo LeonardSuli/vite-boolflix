@@ -20,7 +20,6 @@ export const state = reactive({
     loading: true,
 
     
-
     // Funzione con cui richiamo la lista di film con una chiamata ajax
     getMovies(api_url_movies){
         
@@ -28,20 +27,19 @@ export const state = reactive({
         .get(api_url_movies)
         .then(response => {
 
-        console.log(response.data.results);
+            console.log(response.data.results);
 
-        this.movies = response.data.results
+            this.movies = response.data.results
 
-        // this.loading = false
+            // this.loading = false
 
         })
         .catch(error => {
 
-        console.error(error);
+            console.error(error);
         
         })
     },
-
 
 
     // Funzione con cui richiamo la lista di serieTV con una chiamata ajax
@@ -51,17 +49,16 @@ export const state = reactive({
         .get(api_url_serieTV)
         .then(response => {
 
-        console.log(response.data.results);
+            console.log(response.data.results);
 
-        this.serieTV = response.data.results
+            this.serieTV = response.data.results
 
-        // this.loading = false
-
+            // this.loading = false
 
         })
         .catch(error => {
 
-        console.error(error);
+            console.error(error);
         
         })
     },
@@ -75,37 +72,33 @@ export const state = reactive({
         .get(api_url_mix)
         .then(response => {
 
-        console.log(response.data.results);
+            console.log(response.data.results);
 
-        this.mix = response.data.results
+            this.mix = response.data.results
 
-        this.loading = false
+            this.loading = false
 
         })
         .catch(error => {
 
-        console.error(error);
+            console.error(error);
         
         })
     },
 
 
+    // Funzione che restituisce la bandiera in base alla lingua originale
     getFlags(original_language){
 
-        return `/flags/${original_language === 'en' ? 'gb' : 
+        return `/flags/${
+        original_language === 'en' ? 'gb' : 
         original_language === 'cs' ? 'cz' :
         original_language === 'ja' ? 'jp' : 
         original_language === 'ko' ? 'kr' :
         original_language === 'zh' ? 'cn' : 
+        original_language === 'hi' ? 'in' : 
         original_language}.svg`
 
     }
-
-
-
-
-    
-
-  
 
 })
