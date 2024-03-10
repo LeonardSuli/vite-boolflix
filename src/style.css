@@ -129,8 +129,8 @@ section h1{
 }
 
 .category{
-  margin-top: 0.75rem;
-  margin-bottom: 0.25rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.25rem;
   font-weight: 700;
   font-size: 18px;
 }
@@ -141,4 +141,14 @@ section h1{
 
 .title, .original_title, .language, .star_vote_average, .overview {
   padding: 0 1rem;
+}
+
+.overview{
+  display: none;
+}
+
+.movie_card:hover .overview, 
+.serieTV_card:hover .overview,
+.mix_card:hover .overview{
+  display: block;
 }
