@@ -116,8 +116,8 @@ section h1{
   text-align: center;
   font-size: 14px;
   overflow: auto;
-  z-index: -1;
   transition: all 0.5s;
+  opacity: 0;
 }
 
 .movie_card:hover .information, 
@@ -125,7 +125,7 @@ section h1{
 .mix_card:hover .information{
   background-color: rgb(27, 26, 26);
   box-shadow: 0 0 20px white;
-  z-index: 1;
+  opacity: 1;
 }
 
 .category{
@@ -141,14 +141,4 @@ section h1{
 
 .title, .original_title, .language, .star_vote_average, .overview {
   padding: 0 1rem;
-}
-
-.overview{
-  display: none;
-}
-
-.movie_card:hover .overview, 
-.serieTV_card:hover .overview,
-.mix_card:hover .overview{
-  display: block;
 }
